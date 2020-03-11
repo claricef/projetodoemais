@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @doacao.item %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @doacao.status %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @doacao.obs %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @doacao.user %>
+</p>
+
+<%= link_to 'Edit', edit_doacao_path(@doacao) %> |
+<%= link_to 'Back', doacoes_path %>

@@ -1,0 +1,37 @@
+<%= form_with(model: doacao, local: true) do |form| %>
+  <% if doacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(doacao.errors.count, "error") %> prohibited this doacao from being saved:</h2>
+
+      <ul>
+      <% doacao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :item %>
+    <%= form.text_field :item %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :obs %>
+    <%= form.text_area :obs %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

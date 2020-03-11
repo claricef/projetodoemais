@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Doadores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Rg</th>
+      <th>Cpf</th>
+      <th>Endereco</th>
+      <th>Numero</th>
+      <th>Bairro</th>
+      <th>Cidade</th>
+      <th>Uf</th>
+      <th>Cep</th>
+      <th>Telefone</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doadores.each do |doador| %>
+      <tr>
+        <td><%= doador.nome %></td>
+        <td><%= doador.rg %></td>
+        <td><%= doador.cpf %></td>
+        <td><%= doador.endereco %></td>
+        <td><%= doador.numero %></td>
+        <td><%= doador.bairro %></td>
+        <td><%= doador.cidade %></td>
+        <td><%= doador.uf %></td>
+        <td><%= doador.cep %></td>
+        <td><%= doador.telefone %></td>
+        <td><%= doador.user %></td>
+        <td><%= link_to 'Show', doador %></td>
+        <td><%= link_to 'Edit', edit_doador_path(doador) %></td>
+        <td><%= link_to 'Destroy', doador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doador', new_doador_path %>
