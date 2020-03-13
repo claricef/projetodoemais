@@ -1,0 +1,27 @@
+.geral{
+	color: #837F7F;
+	font-weight: bold;
+	text-align: left;
+}
+h5{
+	color: #7A00BA;
+}
+
+h6{
+	text-align: left;
+	color: #18A7D1;
+}
+
+.form-group{
+	color: #837F7F;
+	font-weight: bold
+}
+
+.dados{
+	text-align: left;
+	color: #837F7F
+}
+
+strong{
+	color: #18A7D1;
+}

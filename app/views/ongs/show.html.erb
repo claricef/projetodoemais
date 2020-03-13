@@ -1,64 +1,84 @@
 <p id="notice"><%= notice %></p>
-
-<p>
+<br>
+<center>
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+    <h5 class="card-title">Visualizando informações da ONG</h5>
+<form>
+<br>
+  <div class="card" style="width: 35rem;">
+  <div class="card-body">
+    <p class="geral" class="card-title">Dados Gerais</p>
+<p class="dados">
   <strong>Cnpj:</strong>
   <%= @ong.cnpj %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Razao social:</strong>
   <%= @ong.razao_social %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Nome fantasia:</strong>
   <%= @ong.nome_fantasia %>
 </p>
 
-<p>
+</div>
+</div>
+<br>
+<div class="card" style="width: 35rem;">
+  <div class="card-body">
+    <p class="geral" class="card-title">Dados de Localização</p>
+<p class="dados">
   <strong>Endereco:</strong>
   <%= @ong.endereco %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Numero:</strong>
   <%= @ong.numero %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Bairro:</strong>
   <%= @ong.bairro %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Cidade:</strong>
   <%= @ong.cidade %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Uf:</strong>
   <%= @ong.uf %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Cep:</strong>
   <%= @ong.cep %>
 </p>
-
-<p>
+</div>
+</div>
+<br>
+<div class="card" style="width: 35rem;">
+  <div class="card-body">
+    <p class="geral" class="card-title">Mais informações sobre a ONG</p>
+<p class="dados">
   <strong>Telefone:</strong>
   <%= @ong.telefone %>
 </p>
-
-<p>
+<p class="dados">
   <strong>Bio:</strong>
   <%= @ong.bio %>
 </p>
-
-<p>
-  <strong>User:</strong>
-  <%= @ong.user %>
-</p>
+</div>
+</div>
+</form>
+</div>
+</div>
+</center>
 
 <%= link_to 'Edit', edit_ong_path(@ong) %> |
 <%= link_to 'Back', ongs_path %>

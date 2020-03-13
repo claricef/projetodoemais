@@ -69,6 +69,6 @@ class OngsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ong_params
-      params.require(:ong).permit(:cnpj, :razao_social, :nome_fantasia, :endereco, :numero, :bairro, :cidade, :uf, :cep, :telefone, :bio, :user_id)
+      params.require(:ong).permit(:cnpj, :razao_social, :nome_fantasia, :endereco, :numero, :bairro, :cidade, :uf, :cep, :telefone, :bio,:image, :user_id)
     end
 end

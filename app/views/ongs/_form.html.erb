@@ -10,68 +10,100 @@
       </ul>
     </div>
   <% end %>
+<br>
+<center>
+<div class="card" style="width: 40rem;">
+  <div class="card-header">
+  <h5 class="card-title">Cadastro da ONG!</h5>
+<form>
 
-  <div class="field">
+<div class="form-group" style="text-align: left;">
+    <%= form.label :Logo %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div  class="card" style="width: 35rem;">
+  <div  class="card-body" >
+  <h6 class="card-title"> Dados Gerais </h6>
+  <div class="form-group" style="text-align: left;">
     <%= form.label :cnpj %>
-    <%= form.text_field :cnpj %>
+    <%= form.text_field :cnpj, class: 'form-control'%>
   </div>
 
-  <div class="field">
+  <div class="form-group" style="text-align: left;">
     <%= form.label :razao_social %>
-    <%= form.text_field :razao_social %>
+    <%= form.text_field :razao_social, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group" style="text-align: left;">
     <%= form.label :nome_fantasia %>
-    <%= form.text_field :nome_fantasia %>
+    <%= form.text_field :nome_fantasia, class: 'form-control' %>
   </div>
+</div>
+</div>
+<br>
+<div class="card" style="width: 35rem;">
+  <div class="card-body " >
+<h6 class="card-title"> Dados de Localização </h6>
 
-  <div class="field">
+  <div class="form-group" style="text-align: left;">
     <%= form.label :endereco %>
-    <%= form.text_field :endereco %>
+    <%= form.text_field :endereco, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group" style="text-align: left;">
     <%= form.label :numero %>
-    <%= form.text_field :numero %>
+    <%= form.text_field :numero, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group" style="text-align: left;">
     <%= form.label :bairro %>
-    <%= form.text_field :bairro %>
+    <%= form.text_field :bairro, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group" style="text-align: left;">
     <%= form.label :cidade %>
-    <%= form.text_field :cidade %>
+    <%= form.text_field :cidade, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group" style="text-align: left;">
     <%= form.label :uf %>
-    <%= form.text_field :uf %>
+    <%= form.text_field :uf, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group" style="text-align: left;">
     <%= form.label :cep %>
-    <%= form.text_field :cep %>
+    <%= form.text_field :cep, class: 'form-control' %>
   </div>
 
-  <div class="field">
+
+</div>
+</div>
+<br>
+<div class="card" style="width: 35rem;">
+  <div class="card-body " >
+<h6 class="card-title"> Mais informações sobre a ONG </h6>
+
+<div class="form-group" style="text-align: left;">
     <%= form.label :telefone %>
-    <%= form.text_field :telefone %>
+    <%= form.text_field :telefone, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :bio %>
-    <%= form.text_area :bio %>
+<div class="form-group" style="text-align: left;">
+    <%= form.label :biografia %>
+    <%= form.text_area :bio, class: 'form-control' %>
   </div>
+
+</div>
+</div>
 
   <div class="field">
     <%= form.label :user_id %>
     <%= form.text_field :user_id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+ 
+  <div class="submit" style="color: #7A00BA">
+    <%= form.submit 'CADASTRAR', class: 'btn btn-primary' %>
   </div>
 <% end %>

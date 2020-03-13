@@ -10,20 +10,26 @@
       </ul>
     </div>
   <% end %>
+  <br>
+ <center>
+  <div class="card" style="width: 35rem;">
+  <div class="card-header">
+  <h5 class="card-title">Cadastro da Doação!</h5>
+<form>
 
-  <div class="field">
+  <div class="form-group" style="text-align: left;">
     <%= form.label :item %>
-    <%= form.text_field :item %>
+    <%= form.text_field :item, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group" style="text-align: left;">
     <%= form.label :status %>
-    <%= form.text_field :status %>
+    <%= form.text_field :status, class: 'form-control'%>
   </div>
 
-  <div class="field">
-    <%= form.label :obs %>
-    <%= form.text_area :obs %>
+  <div class="form-group" style="text-align: left;">
+    <%= form.label :observação %>
+    <%= form.text_area :obs, class: 'form-control' %>
   </div>
 
   <div class="field">
@@ -31,7 +37,12 @@
     <%= form.text_field :user_id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  
+  <div class="submit" style="color: #7A00BA">
+    <%= form.submit 'CADASTRAR' %>
   </div>
+</form>
+</div>
+</div>
+</center>
 <% end %>
