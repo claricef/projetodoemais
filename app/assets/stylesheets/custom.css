@@ -25,3 +25,10 @@ h6{
 strong{
 	color: #18A7D1;
 }
+
+.d-block{
+	max-width:90px;
+    max-height:65px;
+    width: auto;
+    height: auto;
+}
