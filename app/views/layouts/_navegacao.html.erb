@@ -1,28 +1,13 @@
-<div class="div-lat">
-  <div id="logo">
-    <%= image_tag 'LOGO', class:'d-block w-100'%>
-  </div>
-</div>
-  <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg ">
+  <%= image_tag 'LOGO', class: 'd-block w-100' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
-  </button>-->
-<div class="menu">
-  <nav id="nav-menu-container">
-      <ul> 
-        <li><%= link_to "Como Funciona", new_ong_path, class: 'push-menu' %> </li>
-        <li><%= link_to "Instituições", ongs_path, class: 'push-menu' %></li>
-        <li><div class="button"><%= link_to "Cadastre-se", new_doacao_path, class: 'push-menu-bot' %></div></li>
-        <li><div class="button"><%= link_to "Login", doacoes_path, class: 'push-menu-bot' %></div></li>
-      </ul>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item"><%= link_to "Cadastro", new_doacao_path, class: 'push-menu' %></li>
+      <li class="nav-item"><%= link_to "Instituições", ongs_path, class: 'push-menu' %></li>
+      <li class="nav-item"><%= link_to "Necessidades", doacoes_path, class: 'push-menu' %></li>
+    </ul>
+  </div>
 </nav>
- <div class="box1">
-     
- </div>
- <div class="box2">
- </div>
- <p id="texto"> Sozinho você pode muito.<br> Unidos podemos muito mais!</p>
- <p id="texto-menor"> Faça parte desta transformação e ajude quem precisa. 
-Seja um doador e auxilie no trabalho das Organizações 
-dedicadas a crianças com câncer. </p>
-</div>
-</div>
