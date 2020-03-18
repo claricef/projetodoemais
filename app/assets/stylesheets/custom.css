@@ -76,3 +76,42 @@ strong{
 	margin-top: -25%;
 	margin-right: 5%;
 }
+
+
+.titulo{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 25px;
+	text-align: left;
+	float: right;
+}
+
+.sobre{
+	width: 50%;
+	float: right;
+}
+#text{
+	padding-left: 2%;
+	font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    padding: 0;
+    text-align: justify;
+    font-size: 15px;
+    color: #837F7F;
+    float: right;
+}
+
+li{
+	list-style-type: none;
+	font-family: "Montserrat", sans-serif;
+	color: #837F7F;
+}
+
+i{
+	color: #EDC51D;
+}
+
+.card-text{
+	font-family: "Montserrat", sans-serif;
+	color: #837F7F;
+}
