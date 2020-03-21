@@ -1,31 +1,21 @@
 <p id="notice"><%= notice %></p>
+<center>
+<h2>Doacoes em aberto</h2>
 
-<h1>Doacoes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Item</th>
-      <th>Status</th>
-      <th>Obs</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @doacoes.each do |doacao| %>
-      <tr>
-        <td><%= doacao.item %></td>
-        <td><%= doacao.status %></td>
-        <td><%= doacao.obs %></td>
+<% @doacoes.each do |doacao| %>
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= doacao.item %></h5>
+    <p class="card-text"><%= doacao.obs %></p>
+    <a href="#" class="btn btn-primary">DOAR</a>
+  </div>
+</div>
         <td><%= link_to 'Show', doacao %></td>
         <td><%= link_to 'Edit', edit_doacao_path(doacao) %></td>
         <td><%= link_to 'Destroy', doacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
-
 <br>
-
 <%= link_to 'New Doacao', new_doacao_path %>
+</center
