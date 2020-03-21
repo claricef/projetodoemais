@@ -1,59 +1,76 @@
 <p id="notice"><%= notice %></p>
-
-<p>
+<br>
+<center>
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+    <h5 class="card-title">Visualizando informações do DOADOR</h5>
+<form>
+<br>
+  <div class="card" style="width: 35rem;">
+  <div class="card-body">
+    <p class="geral" class="card-title">Dados Gerais</p>
+<p class="dados">
   <strong>Nome:</strong>
   <%= @doador.nome %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Rg:</strong>
   <%= @doador.rg %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Cpf:</strong>
   <%= @doador.cpf %>
 </p>
 
-<p>
+</div>
+</div>
+<br>
+<div class="card" style="width: 35rem;">
+  <div class="card-body">
+    <p class="geral" class="card-title">Dados de Localização</p>
+<p class="dados">
+<p class="dados">
   <strong>Endereco:</strong>
   <%= @doador.endereco %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Numero:</strong>
   <%= @doador.numero %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Bairro:</strong>
   <%= @doador.bairro %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Cidade:</strong>
   <%= @doador.cidade %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Uf:</strong>
   <%= @doador.uf %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Cep:</strong>
   <%= @doador.cep %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Telefone:</strong>
   <%= @doador.telefone %>
 </p>
-
-<p>
+</div>
+</div>
+<p class="dados">
   <strong>User:</strong>
   <%= @doador.user %>
 </p>
-
+</center>
 <%= link_to 'Edit', edit_doador_path(@doador) %> |
 <%= link_to 'Back', doadores_path %>

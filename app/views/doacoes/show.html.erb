@@ -1,19 +1,28 @@
 <p id="notice"><%= notice %></p>
-
-<p>
+<center>
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+    <h5 class="card-title">Visualizando informações do NECESSIDADE</h5>
+<form>
+<br>
+<p class="dados">
   <strong>Item:</strong>
   <%= @doacao.item %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Status:</strong>
   <%= @doacao.status %>
 </p>
 
-<p>
+<p class="dados">
   <strong>Obs:</strong>
   <%= @doacao.obs %>
 </p>
+</form>
+</div>
+</div>
+</center>
 
 <%= link_to 'Edit', edit_doacao_path(@doacao) %> |
 <%= link_to 'Back', doacoes_path %>

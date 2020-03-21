@@ -1,38 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Ongs</h1>
+<h2>Ongs cadastradas na nossa plataforma</h2>
+<br>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Cnpj</th>
-      <th>Razao social</th>
-      <th>Nome fantasia</th>
-      <th>Endereco</th>
-      <th>Numero</th>
-      <th>Bairro</th>
-      <th>Cidade</th>
-      <th>Uf</th>
-      <th>Cep</th>
-      <th>Telefone</th>
-      <th>Bio</th>
-      <th>User</th>
+      <th scope="col">Cnpj</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Endereco</th>
+      <th scope="col">Numero</th>
+      <th scope="col">Bairro</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">Uf</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Bio</th>
+      <th scope="col">User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
+    <tr>
     <% @ongs.each do |ong| %>
       <tr>
         <td><%= ong.cnpj %></td>
-        <td><%= ong.razao_social %></td>
         <td><%= ong.nome_fantasia %></td>
         <td><%= ong.endereco %></td>
         <td><%= ong.numero %></td>
         <td><%= ong.bairro %></td>
         <td><%= ong.cidade %></td>
         <td><%= ong.uf %></td>
-        <td><%= ong.cep %></td>
         <td><%= ong.telefone %></td>
         <td><%= ong.bio %></td>
         <td><%= ong.user %></td>
@@ -46,4 +43,3 @@
 
 <br>
 
-<%= link_to 'New Ong', new_ong_path %>
