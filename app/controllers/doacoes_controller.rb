@@ -69,6 +69,6 @@ class DoacoesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def doacao_params
-      params.require(:doacao).permit(:item, :status, :obs, :user_id)
+      params.require(:doacao).permit(:item, :status, :obs, :image, :user_id)
     end
 end

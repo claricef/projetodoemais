@@ -69,6 +69,6 @@ class DoadoresController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def doador_params
-      params.require(:doador).permit(:nome, :rg, :cpf, :endereco, :numero, :bairro, :cidade, :uf, :cep, :telefone, :user_id)
+      params.require(:doador).permit(:nome, :rg, :cpf, :endereco, :numero, :bairro, :cidade, :uf, :cep, :telefone, :image, :user_id)
     end
 end

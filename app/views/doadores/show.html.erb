@@ -9,6 +9,11 @@
   <div class="card" style="width: 35rem;">
   <div class="card-body">
     <p class="geral" class="card-title">Dados Gerais</p>
+
+<p class="dados">
+  <strong>Perfil:</strong>
+  <%= image_tag @doador.image %>
+</p>
 <p class="dados">
   <strong>Nome:</strong>
   <%= @doador.nome %>
@@ -23,7 +28,10 @@
   <strong>Cpf:</strong>
   <%= @doador.cpf %>
 </p>
-
+<p class="dados">
+  <strong>Telefone:</strong>
+  <%= @doador.telefone %>
+</p>
 </div>
 </div>
 <br>
@@ -59,11 +67,6 @@
 <p class="dados">
   <strong>Cep:</strong>
   <%= @doador.cep %>
-</p>
-
-<p class="dados">
-  <strong>Telefone:</strong>
-  <%= @doador.telefone %>
 </p>
 </div>
 </div>
