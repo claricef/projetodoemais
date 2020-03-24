@@ -14,6 +14,7 @@ class DoacoesController < ApplicationController
 
   # GET /doacoes/new
   def new
+    
     @doacao = Doacao.new
   end
 

@@ -32,6 +32,23 @@
   </div>
 </div>
 <br>
+<center>
+<div class="doacoes">
+    <p>Necessidades em aberto!</p>
+</div>
+<br>
+<% @doacoes.each do |doacao| %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= doacao.item %></h5>
+    <p class="card-text"><%= doacao.obs %></p>
+    <a href="#" class="btn btn-primary">DOAR</a>
+  </div>
+</div>
+<br>
+<% end %>
+</center>
+<br>
 <div class="container-fluid">
     <p>Cadastre-se, é gratis!</p>
     <button type="button" class="btn btn-warning">
@@ -41,4 +58,3 @@
     <%= link_to "Cadastro da ONG", new_ong_path %>
    </button>
 </div>
-<br>
