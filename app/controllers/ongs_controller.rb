@@ -10,6 +10,7 @@ class OngsController < ApplicationController
   # GET /ongs/1
   # GET /ongs/1.json
   def show
+    @ongs = Ong.all
   end
 
   # GET /ongs/new

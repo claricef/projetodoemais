@@ -1,60 +1,25 @@
-<p class="font-weight-bold"> Sozinho você pode muito.<br> Unidos podemos muito mais!</p>
- <p class="text-left"> Faça parte desta transformação e ajude quem precisa. 
-<br>Seja um doador e auxilie no trabalho das Organizações 
-<br>dedicadas a crianças com câncer. </p>
-
-<div class="image">
-	<%= image_tag 'crianca', class:'rounded float-right' %>
-</div>
-<br>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Quem Somos</h5>
-        <p class="card-text">O DoeMais é um projeto para intermediar doações entre ONG's que prestam auxilio à crianças com câncer e pessoas que desejam realizar doações. </p>
-      </div>
-    </div>
+<div class="fundo">
+ <br><br><br><br><br>
+  <div >
+    <p class="font-weight-bold"> Sozinho você pode muito.<br> Unidos podemos muito mais!</p>
+    <p class="text-left"> Faça parte desta transformação e ajude quem precisa. <br> Seja um doador e auxilie no trabalho das Organizações <br>dedicadas a crianças com câncer. </p>
   </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Aqui você ajuda</h5>
-        <p class="card-text">
-        	<ul>
-            <li><i class="fas fa-child"></i> Crianças com câncer;</li>
-            <li><i class="fas fa-users"></i> As familias das crianças;</li>
-            <li><i class="fas fa-home"></i> ONG's de apoio a crinças com câncer. </li>
-          </ul>
-        </p>
-      </div>
-    </div>
-  </div>
+  <div>
+<figure class="figure">
+  <%= image_tag 'crianca' %>
+</figure>
 </div>
-<br>
-<center>
-<div class="doacoes">
-    <p>Necessidades em aberto!</p>
 </div>
-<br>
-<% @doacoes.each do |doacao| %>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= doacao.item %></h5>
-    <p class="card-text"><%= doacao.obs %></p>
-    <a href="#" class="btn btn-primary">DOAR</a>
-  </div>
-</div>
-<br>
-<% end %>
-</center>
-<br>
 <div class="container-fluid">
-    <p>Cadastre-se, é gratis!</p>
-    <button type="button" class="btn btn-warning">
-    <%= link_to "Cadastro do Doador", new_doador_path %>
-    </button>
-   <button type="button" class="btn btn-warning">
-    <%= link_to "Cadastro da ONG", new_ong_path %>
-   </button>
+	<div class="row">
+      <div class="col-sm" style="margin-top: 2%">
+	     <p>  <%= @ongs.size %> Instituições Cadastradas</p>
+	  </div>
+	  <div class="col-sm" style="margin-top: 2%">
+		  <p>  <%= @doadores.size %> Doadores Cadastrados</p>
+	  </div>
+      <div class="col-sm" style="margin-top: 2%">
+	      <p>  <%= @doacoes.size %> Necessidades em Aberto</p>
+	  </div>
 </div>
+
