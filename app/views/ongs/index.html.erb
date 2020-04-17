@@ -1,45 +1,19 @@
 <p id="notice"><%= notice %></p>
-
+<center>
 <h2>Ongs cadastradas na nossa plataforma</h2>
-<br>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Cnpj</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Endereco</th>
-      <th scope="col">Numero</th>
-      <th scope="col">Bairro</th>
-      <th scope="col">Cidade</th>
-      <th scope="col">Uf</th>
-      <th scope="col">Telefone</th>
-      <th scope="col">Bio</th>
-      <th scope="col">User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+   <div class="row">
     <% @ongs.each do |ong| %>
-      <tr>
-        <td><%= ong.cnpj %></td>
-        <td><%= ong.nome_fantasia %></td>
-        <td><%= ong.endereco %></td>
-        <td><%= ong.numero %></td>
-        <td><%= ong.bairro %></td>
-        <td><%= ong.cidade %></td>
-        <td><%= ong.uf %></td>
-        <td><%= ong.telefone %></td>
-        <td><%= ong.bio %></td>
-        <td><%= ong.user %></td>
+    <div class="col-sm">
+    <div class="card" style="width: 18rem;">
+       <div class="card-body">
+        <h5 class="card-title"> <%= ong.nome_fantasia %></h5>
+        <p class="card-text"><%= ong.bio %></p>
+        </div>
+      </div>
         <td><%= link_to 'Show', ong %></td>
         <td><%= link_to 'Edit', edit_ong_path(ong) %></td>
         <td><%= link_to 'Destroy', ong, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
     <% end %>
-  </tbody>
-</table>
+</center>
 
-<br>
 

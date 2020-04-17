@@ -4,11 +4,17 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ">
-      <li class="nav-item"><%= link_to "Sobre", new_doacao_path, class: 'push-menu' %></li>
       <li class="nav-item"><%= link_to "Instituições", ongs_path, class: 'push-menu' %></li>
       <li class="nav-item"><%= link_to "Necessidades", doacoes_path, class: 'push-menu' %></li>
       <button type="button" class="btn btn-primary">Cadastro</button>
-      <button type="button" class="btn btn-primary">Login</button>
+      <button type="button" class="btn btn-outline-primary">
+      <li><%= link_to 'Login', new_user_session_path  %></li>
+      </button>
+      <% if user_signed_in? %>
+         <li class="nav-item"><%= link_to "Nova Doação", new_doacao_path, class: 'push-menu' %></li>
+         <li class="nav-item"><%= link_to 'Minha Conta', edit_user_registration_path  %></li>
+         <li class="nav-item"><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
+      <% end %>
     </ul>
   </div>
 </nav>

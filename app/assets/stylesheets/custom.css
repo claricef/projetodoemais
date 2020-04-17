@@ -7,6 +7,12 @@
 	font-weight: bold;
 	text-align: left;
 }
+h3{
+	text-align: center;
+	color: #837F7F;
+	margin-top: 5%;
+}
+
 h5{
 	color: #7A00BA;
 }
@@ -34,6 +40,7 @@ strong{
 	background-color: #FFFFFF;
 	width: 75%;
 	float: right;
+	margin-bottom: 5%;
 	
 }
 
@@ -69,15 +76,12 @@ strong{
 	color: #7A00BA;
 	font-size: 40px;
 	font-family: 'Montserrat', sans-serif;
-	margin-left: 2%;
-
 }
 
 .text-left{
 	color: #837F7F;
 	font-size: 15px;
 	font-family: 'Montserrat', sans-serif;
-	
 }
 
 .float-right{
@@ -160,9 +164,7 @@ left: 0;
 	text-align: center;
 }
 
-#footer{
-     margin-top: 8%;
-}
+
 
 .btn{
     color: #FFFFFF;
@@ -204,11 +206,15 @@ left: 0;
 
 .container-fluid{
 	background-color: #EDC51D;
+	width: 100%;
 	height: 80px;
-	display: inline-block;
 	font-family: "Montserrat", sans-serif;
 	font-size: 20px;
 	color: #FFFFFF;
 	
+}
+
+.container-info{
+	margin-top: 5%;
 }
 
