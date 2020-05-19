@@ -12,7 +12,7 @@ class CreateOngs < ActiveRecord::Migration[5.2]
       t.string :cep
       t.string :telefone
       t.text :bio
-      t.references :user, foreign_key: true
+      t.references :user, polymorphic: true
 
       t.timestamps
     end

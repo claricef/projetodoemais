@@ -1,0 +1,120 @@
+.nav {
+  height: 80px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  position: relative;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav-header > .nav-title {
+  display: inline-block;
+}
+
+.nav-btn {
+  display: none;
+}
+
+.nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #7A00BA;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 19px;
+  margin-right: 30px;
+  outline: none;
+}
+
+.nav-links > .signup {
+  border-radius: 30px;
+  background-color: #7A00BA;
+  color: #fff;
+  padding: 10px 20px 10px 20px;
+}
+
+.nav-links > .signin {
+  border-radius: 30px;
+  background-color: #fff;
+  border: 1.5px #7A00BA solid;
+  color: #7A00BA;
+  text-align: center;
+  padding: 10px 30px 10px 30px;
+}
+
+#nav-check {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 13px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #7A00BA;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #7A00BA;
+    height: 100px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    text-align: center;
+    border-radius: 15px;
+    z-index: 1;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    color: #fff;
+    margin-right: 0px;
+  }
+
+  .nav-links > .signin {
+    background-color: #7A00BA;
+    color: #fff;
+    padding: 10px 20px 10px 20px;
+  }
+
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 30vh;
+    max-width: 300px;
+    margin-top: 100px;
+    text-align: center;
+    right: 0;
+  }
+}

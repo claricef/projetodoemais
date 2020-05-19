@@ -25,16 +25,19 @@ class OngsController < ApplicationController
   # POST /ongs
   # POST /ongs.json
   def create
-    @ong = Ong.new(ong_params)
+    ong = Ong.new(ong_params)
+    values = params[:ong]
+    ong.user_type = "User"
 
-    respond_to do |format|
-      if @ong.save
-        format.html { redirect_to @ong, notice: 'Ong was successfully created.' }
-        format.json { render :show, status: :created, location: @ong }
-      else
-        format.html { render :new }
-        format.json { render json: @ong.errors, status: :unprocessable_entity }
-      end
+    user = User.create!(email: values[:email], password: values[:password],
+    password_confirmation: values[:passoword_confirmation], tipo: 1)
+
+    ong.user = user;
+
+    if ong.valid? and user.valid?
+      ong.save
+
+      render :new
     end
   end
 

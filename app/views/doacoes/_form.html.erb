@@ -16,8 +16,6 @@
   <div class="card-header">
   <h5 class="card-title">Cadastro da Doação!</h5>
 <form>
-   
-
   <div class="form-group" style="text-align: left;">
     <%= form.label :item %>
     <%= form.text_field :item, class: 'form-control' %>
@@ -32,17 +30,12 @@
     <%= form.label :observação %>
     <%= form.text_area :obs, class: 'form-control' %>
   </div>
-
-    <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-  
   <div class="submit" style="color: #7A00BA">
     <%= form.submit 'CADASTRAR' %>
   </div>
+
+</center>
+  <% end %>
 </form>
 </div>
 </div>
-</center>
-<% end %>

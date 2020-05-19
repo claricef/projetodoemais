@@ -1,48 +1,56 @@
-<div class="fundo"> 
-  <div class="texto">
-    <p class="font-weight-bold"> Sozinho você pode muito.<br> Unidos podemos muito mais!</p>
-    <p class="text-left"> Faça parte desta transformação e ajude quem precisa. <br> Seja um doador e auxilie no trabalho das Organizações <br>dedicadas a crianças com câncer. </p>
+<div class="first-wrapper">
+  <div class="logo-wrapper">
+    <%= image_tag 'LOGO', class: 'logo'  %>
+  </div>
+  <div class="header-wrapper">
+    <%= render 'layouts/nav' %>
+    <%= image_tag 'Imagem1', class: 'image-header' %>
+    <div class="description-wrapper">
+      <h1>Sozinho você pode muito. Unidos podemos muito mais.</h1>
+      <p> Faça parte desta transformação e ajude quem precisa. Seja um doador e auxilie no trabalho das Organizações dedicadas a crianças com câncer.</p>
+    </div>
   </div>
 </div>
-<div class="container-fluid">
-	<div class="row">
-      <div class="col-sm" style="margin-top: 2%">
-	     <p>   <%= @ongs.size %> Instituições Cadastradas</p>
-	  </div>
-	  <div class="col-sm" style="margin-top: 2%">
-		  <p>  <%= @doadores.size %> Doadores Cadastrados</p>
-	  </div>
-      <div class="col-sm" style="margin-top: 2%">
-	      <p>  <%= @doacoes.size %> Necessidades em Aberto</p>
-	  </div>
-</div>
-</div>
-<div class="container-info">
-<h3>Organizações que precisam de ajuda</h3>
-<div class="row" style="margin-top: 2%; padding-left:4%">
-<% @doacoes.each do |doacao| %>
-<div class="col-sm">
- <div class="card" style="width: 18rem;">
-   <div class="card-body">
-      <center><h5 class="card-title"><%= doacao.item %></h5></center>
-      <p class="card-text"><%= doacao.obs %></p>
-      <center><a href="#" class="btn btn-primary">DOAR</a></center>
+<div class="second-wrapper">
+  <div class="details-wrapper">
+    <div class="detail">
+      <span class="value"> <%= @ongs.size %> </span>
+      <span class="name"> Instituições Cadastradas</span>
+    </div>
+    <div class="detail">
+      <span class="value"> <%= @doadores.size %> </span>
+      <p class="name"> Doadores Cadastrados</p>
+    </div>
+    <div class="detail">
+      <span class="value"> <%= @doacoes.size %> </span>
+      <span class="name"> Necessidades em aberto</span>
+    </div>
   </div>
 </div>
-</div>
+<div class="third-wrapper">
+  <h1> Organizações que precisam de ajuda </h1>
+  <% @doacoes.each do |doacao| %>
+  <article class="place-card">
+    <%= image_tag doacao.ong.image, class: 'photo' %>
+    <div class="details">
+     <h1><%= doacao.ong.nome_fantasia %></h1>
+     <p class="item"> Precisa de <%= doacao.item %></p>
+     <span> <i class="fa fa-map-marker"></i> <%= doacao.ong.cidade %> </span>
+     <% if user_signed_in? %>
+     <button> DOAR </button>
+     <% end %>
+   </div>
+ </article>
  <% end %>
 </div>
 </div>
-<div class="container-info">
-  <div class="container-fluid" style="background-color: #7A00BA; height: 100px">
-	<center>
-    <h4>Cadastre-se, é gratís!</h4>
-    <button type="button" class="btn btn-warning">
-    <%= link_to "Cadastro Doador", new_doador_path %>
-   </button>
-    <button type="button" class="btn btn-warning">
-    <%= link_to "Cadastro Instituição", new_ong_path %>
-   </button>
-   </center>
+</div>
+
 </div>
 </div>
+<div class="fourth-wrapper">
+  <h1>Cadastre-se, é grátis!</h1>
+  <button> <%= link_to "CADASTRO ONG", new_ong_path %> </button>
+  <button> <%= link_to "CADASTRO DOADOR", new_doador_path %> </button>
+</div>
+<%= render 'layouts/footer' %>

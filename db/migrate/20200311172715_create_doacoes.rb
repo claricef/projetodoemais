@@ -4,7 +4,7 @@ class CreateDoacoes < ActiveRecord::Migration[5.2]
       t.string :item
       t.string :status
       t.text :obs
-      t.references :user, foreign_key: true
+      t.references :ong, foreign_key: true
 
       t.timestamps
     end

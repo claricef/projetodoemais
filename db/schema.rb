@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_07_160947) do
+ActiveRecord::Schema.define(version: 2020_05_12_151406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 2020_04_07_160947) do
     t.string "item"
     t.string "status"
     t.text "obs"
-    t.bigint "user_id"
+    t.bigint "ong_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_doacoes_on_user_id"
+    t.index ["ong_id"], name: "index_doacoes_on_ong_id"
   end
 
   create_table "doadores", force: :cascade do |t|
@@ -57,10 +57,11 @@ ActiveRecord::Schema.define(version: 2020_04_07_160947) do
     t.string "uf"
     t.string "cep"
     t.string "telefone"
+    t.string "user_type"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_doadores_on_user_id"
+    t.index ["user_type", "user_id"], name: "index_doadores_on_user_type_and_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -81,16 +82,34 @@ ActiveRecord::Schema.define(version: 2020_04_07_160947) do
     t.string "cep"
     t.string "telefone"
     t.text "bio"
+    t.string "user_type"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_ongs_on_user_id"
+    t.index ["user_type", "user_id"], name: "index_ongs_on_user_type_and_user_id"
+  end
+
+  create_table "room_messages", force: :cascade do |t|
+    t.bigint "room_id"
+    t.bigint "user_id"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_room_messages_on_room_id"
+    t.index ["user_id"], name: "index_room_messages_on_user_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_rooms_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "tipo"
+    t.integer "tipo"
     t.string "email"
     t.string "senha"
     t.string "encrypted_password", default: "", null: false
@@ -102,7 +121,7 @@ ActiveRecord::Schema.define(version: 2020_04_07_160947) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "doacoes", "users"
-  add_foreign_key "doadores", "users"
-  add_foreign_key "ongs", "users"
+  add_foreign_key "doacoes", "ongs"
+  add_foreign_key "room_messages", "rooms"
+  add_foreign_key "room_messages", "users"
 end

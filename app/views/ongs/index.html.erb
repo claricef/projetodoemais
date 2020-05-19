@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <center>
 <h2>Ongs cadastradas na nossa plataforma</h2>
    <div class="row">
@@ -8,9 +7,11 @@
        <div class="card-body">
         <h5 class="card-title"> <%= ong.nome_fantasia %></h5>
         <p class="card-text"><%= ong.bio %></p>
+        <button class="btn btn-outline-primary">
+        <td><%= link_to 'Detalhes', ong %></td> 
+        </button> 
         </div>
       </div>
-        <td><%= link_to 'Show', ong %></td>
         <td><%= link_to 'Edit', edit_ong_path(ong) %></td>
         <td><%= link_to 'Destroy', ong, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>

@@ -5,6 +5,7 @@ class DoacoesController < ApplicationController
   # GET /doacoes.json
   def index
     @doacoes = Doacao.all
+    @ongs = Ong.all
   end
 
   # GET /doacoes/1
@@ -14,7 +15,7 @@ class DoacoesController < ApplicationController
 
   # GET /doacoes/new
   def new
-    
+    @ong = Ong.new
     @doacao = Doacao.new
   end
 
@@ -26,7 +27,7 @@ class DoacoesController < ApplicationController
   # POST /doacoes.json
   def create
     @doacao = Doacao.new(doacao_params)
-
+    @doacao.ong = current_user.ong
     respond_to do |format|
       if @doacao.save
         format.html { redirect_to @doacao, notice: 'Doacao was successfully created.' }
@@ -70,6 +71,6 @@ class DoacoesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def doacao_params
-      params.require(:doacao).permit(:item, :status, :obs, :image, :user_id)
+      params.require(:doacao).permit(:item, :status, :obs, :image, :ong_id)
     end
 end

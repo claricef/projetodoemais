@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import './animations.css';
+
+:root {
+  --purple: #7A00BA;
+  --gray: #837F7F;
+  --darker-gray: #2e2d2d;
+  --blue: #18A7D1;
+  --yellow: #EDC51D;
+  --white: #FFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: Montserrat, 'sans-serif';
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+a:link {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+a:visited {
+  text-decoration: inherit;
+  color: inherit
+}
+
+.first-wrapper {
+  display: flex;
+  min-height: 80vh;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-basis: 25%;
+  background-color: var(--purple);
+}
+
+.logo-wrapper > .logo {
+  height: 150px;
+  width: auto;
+}
+
+.header-wrapper {
+  flex-basis: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+  background-image: url('../images/outline.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-wrapper > .image-header {
+  position: relative;
+  left: -200px;
+  height: 220px;
+  width: auto;
+  box-shadow: 46px 44px 0px 0px var(--yellow);
+  animation:  text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+} 
+
+.header-wrapper > .description-wrapper {
+  flex-basis: 50%;
+}
+
+.description-wrapper > h1 {
+  color: var(--purple);
+  position: relative;
+  font-size: 2rem;
+  font-weight: 700;
+  animation: text-pop-up-top 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.description-wrapper > p {
+  font-size: 12px;
+  margin-top: 30px;
+  font-weight: 300;
+  line-height: 25px;
+  animation: text-pop-up-top 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.second-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20vh;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: var(--yellow);
+}
+
+.second-wrapper > .details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.details-wrapper > .detail {
+  display: flex;
+  flex-basis: 33.3%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.detail > .value {
+  font-size: 3em;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.detail > .name {
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--white);
+  white-space: pre-wrap;
+  text-align: center;
+  flex-basis: 66.6%;
+}
+
+.third-wrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 25px;
+  text-align: center;
+}
+
+.third-wrapper > h1 {
+  margin-top: 25px;
+  flex-basis: 100%;
+  font-weight: 700;
+  color: var(--gray);
+}
+
+.third-wrapper > .place-card {
+  display: flex;
+  flex-direction: column;
+  height: 360px;
+  flex-basis: 310px;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 24px 35px -16px rgba(107,179,237,.5);
+}
+
+.place-card:hover {
+  box-shadow: 0 24px 35px -16px rgba(107,179,237, 1);
+}
+
+.place-card > .photo {
+  max-height: 50%;
+  width: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+}
+
+.place-card > .details {
+  display: flex;
+  flex-basis: 60%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.details > h1 {
+  color: var(--purple);
+  font-size: 20px;
+}
+
+.details > p {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--gray);
+}
+
+.details > span {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--gray);
+}
+
+.details > span > i {
+  font-size: 20px;
+  margin-right: 15px;
+  color: var(--yellow);
+}
+
+.details > button {
+  position: relative;
+  bottom: -25px;
+  padding: 15px 30px 15px 30px;
+  background-color: var(--purple);
+  color: var(--white);
+  width: 50%;
+  border-radius: 30px;
+}
+
+.fourth-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  min-height: 50vh;
+  background-image: url('../images/Imagem\ 2.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay, color-dodge, overlay, overlay, difference, normal;
+  background-color: var(--purple);
+  background-attachment: scroll;
+}
+
+.fourth-wrapper > h1 {
+  color: var(--white);
+  text-align: center;
+  flex-basis: 100%;
+}
+
+.fourth-wrapper > button {
+  padding: 20px 100px 20px 100px;
+  background-color: var(--white);
+  color: var(--purple);
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.fourth-wrapper > button:hover {
+  transform: scale(1.1);
+  transition: transform 1s;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  min-height: 30vh;
+  background-color: var(--darker-gray);
+}
+
+.footer > span {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gray);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-icon-wrapper {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.footer-icon-wrapper > .footer-icon {
+  width: 250px;
+  height: 150px;
+}
+
+.footer > .links-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-basis: 60%;
+}
+
+.links-wrapper > a {
+  flex-basis: 33.3%;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: var(--gray);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .first-wrapper {
+    flex-direction: column;
+  }
+
+  .third-wrapper {
+    justify-content: center;
+  }
+
+  .header-wrapper {
+    justify-content: center;
+  }
+
+  .header-wrapper > .image-header {
+    width: 100%;
+    height: auto;
+    left: 0;
+    box-shadow: none;
+  }
+
+  .header-wrapper > .description-wrapper {
+    flex-basis: 100%;
+    margin-top: 50px;
+  }
+
+  .second-wrapper > .detail {
+    flex-basis: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .fourth-wrapper  {
+    background-position-x: -15em;
+  }
+
+  .footer > .links-wrapper {
+    flex-basis: 90%;
+  }
+
+  .links-wrapper > a {
+    flex-basis: 100%;
+  }
+}

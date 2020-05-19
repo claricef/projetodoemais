@@ -1,44 +1,37 @@
 class DoadoresController < ApplicationController
   before_action :set_doador, only: [:show, :edit, :update, :destroy]
 
-  # GET /doadores
-  # GET /doadores.json
   def index
     @doadores = Doador.all
   end
 
-  # GET /doadores/1
-  # GET /doadores/1.json
   def show
   end
 
-  # GET /doadores/new
   def new
     @doador = Doador.new
   end
 
-  # GET /doadores/1/edit
   def edit
   end
 
-  # POST /doadores
-  # POST /doadores.json
   def create
-    @doador = Doador.new(doador_params)
+    doador = Doador.new(doador_params)
+    values = params[:doador]
+    doador.user_type = "User"
 
-    respond_to do |format|
-      if @doador.save
-        format.html { redirect_to @doador, notice: 'Doador was successfully created.' }
-        format.json { render :show, status: :created, location: @doador }
-      else
-        format.html { render :new }
-        format.json { render json: @doador.errors, status: :unprocessable_entity }
-      end
+    user = User.create!(email: values[:email], password: values[:password],
+    password_confirmation: values[:passoword_confirmation], tipo: 0)
+
+    doador.user = user;
+
+    if doador.valid? and user.valid?
+      doador.save
+
+      render :new
     end
   end
 
-  # PATCH/PUT /doadores/1
-  # PATCH/PUT /doadores/1.json
   def update
     respond_to do |format|
       if @doador.update(doador_params)
@@ -51,8 +44,6 @@ class DoadoresController < ApplicationController
     end
   end
 
-  # DELETE /doadores/1
-  # DELETE /doadores/1.json
   def destroy
     @doador.destroy
     respond_to do |format|
@@ -69,6 +60,6 @@ class DoadoresController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def doador_params
-      params.require(:doador).permit(:nome, :rg, :cpf, :endereco, :numero, :bairro, :cidade, :uf, :cep, :telefone, :image, :user_id)
+      params.require(:doador).permit(:nome, :rg, :cpf, :endereco, :numero, :bairro, :cidade, :uf, :cep, :telefone, :image, :tipo, :user_id)
     end
 end
