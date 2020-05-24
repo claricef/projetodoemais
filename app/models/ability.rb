@@ -4,12 +4,14 @@ class Ability
   def initialize(user)
 
     if (user)
-        if user.tipo == 'doador'
+        if user.tipo == 0
             can :read, Doacao, user_id: user.id
             can :manage, Doador, user_id: user.id
-        elsif user.tipo == 'ong'
+        elsif user.tipo == 1
+            can :read, Doador
             can :manage, Doacao, user_id: user.id 
             can :manage, Ong, user_id: user.id
+            can :read, Message, user_id: user.id 
         end
     end
 end

@@ -1,0 +1,26 @@
+
+<div class="first-wrapper">
+  <div class="logo-wrapper">
+    <%= image_tag 'LOGO', class: 'logo'  %>
+  </div>
+  <div class="header-wrapper">
+    <%= render 'layouts/nav' %><p id="notice"><%= notice %></p>
+<center>
+<div class="card">
+	<h5 class="card-title"> Mensagem cadastrada!</h5>
+  <div class="card-body">
+<p>
+  <strong>Mensagem:</strong>
+  <%= @message.text %>
+</p>
+<p>
+  <strong>Doador:</strong>
+  <%= @message.doador.nome %>
+</center> 	
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<%= render 'layouts/footer' %>

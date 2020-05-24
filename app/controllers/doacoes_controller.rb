@@ -1,5 +1,6 @@
 class DoacoesController < ApplicationController
   before_action :set_doacao, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /doacoes
   # GET /doacoes.json

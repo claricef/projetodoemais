@@ -2,7 +2,6 @@
   <% if doador.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(doador.errors.count, "error") %> prohibited this doador from being saved:</h2>
-
       <ul>
       <% doador.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,98 +9,88 @@
       </ul>
     </div>
   <% end %>
-  <br>
-  <center>
-  <div class="card" style="width: 40rem;">
-  <div class="card-header">
-  <h5 class="card-title">Cadastro do Doador!</h5>
-  <form>
-  <div  class="card" style="width: 35rem;">
-  <div  class="card-body" >
-  <h6 class="card-title"> Dados Gerais </h6>
-  <div class="form-group" style="text-align: left;">
-    <%= form.label :Perfil %>
-    <%= form.file_field :image %>
-  </div>
- <div class="form-group" style="text-align: left;">
-    <%= form.label :nome %>
-    <%= form.text_field :nome, class: 'form-control' %>
-  </div>
-  <div class="form-group" style="text-align: left;">
-    <%= form.label :rg %>
-    <%= form.text_field :rg, class: 'form-control' %>
-  </div>
-
-  <div class="form-group" style="text-align: left;">
-    <%= form.label :cpf %>
-    <%= form.text_field :cpf, class: 'form-control' %>
-  </div>
-
-   <div class="form-group" style="text-align: left;">
-    <%= form.label :telefone %>
-    <%= form.text_field :telefone, class: 'form-control' %>
-  </div>
-</div>
-</div>
-<br>
-<div class="card" style="width: 35rem;">
-  <div class="card-body " >
-<h6 class="card-title"> Dados de Localização </h6>
-  <div class="form-group" style="text-align: left;">
-    <%= form.label :endereco %>
-    <%= form.text_field :endereco, class: 'form-control' %>
-  </div>
-
-  <div class="form-group" style="text-align: left;">
-    <%= form.label :numero %>
-    <%= form.text_field :numero, class: 'form-control' %>
-  </div>
-
-  <div class="form-group" style="text-align: left;">
-    <%= form.label :bairro %>
-    <%= form.text_field :bairro, class: 'form-control' %>
-  </div>
-
-  <div class="form-group" style="text-align: left;">
-    <%= form.label :cidade %>
-    <%= form.text_field :cidade, class: 'form-control' %>
-  </div>
-
-  <div class="form-group" style="text-align: left;">
-    <%= form.label :uf %>
-    <%= form.text_field :uf, class: 'form-control' %>
-  </div>
-
-  <div class="form-group" style="text-align: left;">
-    <%= form.label :cep %>
-    <%= form.text_field :cep, class: 'form-control'%>
-  </div>
-
-   <div class="form-group" style="text-align: left;">
-      <%= form.label :email %><br />
-      <%= form.email_field :email, autofocus: true, class: "form-control" %>
+ <nav class="nav-signup">
+      <%= image_tag 'LOGO', class: 'logo'  %>
+      <h1>CADASTRO DE DOADOR</h1>
+    </nav>
+    <div class="form-wrapper">
+      <form>
+        <div id="first-part">
+          <div id="photo-wrapper">
+            <h1 class="title"> Dados Gerais </h1>
+            <label for="photo-upload" id="photo-upload-label">
+              <img src="images/photo.png" />
+              <span> Upload Photo </span>
+             </label>
+            <%= form.file_field :image, id:'photo-upload'%>
+          </div>
+          <div id="data-wrapper">
+            <div class="field">
+              <label for="donor-name">Nome</label>
+              <%= form.text_field :nome, id:'donor-name', placeholder:'Insira o seu nome'%>
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <%= form.email_field :email, autofocus: true, placeholder:'Insira o seu e-mail'%>
+            </div>
+            <div class="field">
+              <label>RG</label>
+               <%= form.text_field :rg, placeholder:'Insira o seu RG'%>
+            </div>
+            <div class="field">
+              <label>CPF</label>
+              <%= form.text_field :cpf, placeholder:'Insira o seu CPF'%>
+            </div>
+             <div class="field">
+              <label>Telefone</label>
+              <%= form.text_field :telefone, placeholder:'Insira o seu Telefone'%>
+            </div>
+          </div>
+        </div>
+        <div id="second-part">
+          <h1 class="title">Dados de Localização</h1>
+          <div id="location-wrapper">
+            <div class="field">
+              <label>CEP</label>
+               <%= form.text_field :cep, placeholder:'Insira o seu CEP'%>
+            </div>
+            <div class="field">
+              <label for="">Cidade</label>
+              <%= form.text_field :cidade,  placeholder:'Insira a sua Cidade'%>
+            </div>
+            <div class="field">
+              <label>Estado</label>
+              <%= form.text_field :uf, placeholder:'Insira seu Estado' %>
+            </div>
+            <div class="field">
+              <label>Bairro</label>
+              <%= form.text_field :bairro, placeholder:'Insira o seu Bairro'%>
+            </div>
+            <div class="field">
+              <label>Número</label>
+              <%= form.text_field :numero, placeholder:'Insira o seu Número'%>
+            </div>
+            <div class="field">
+              <label>Endereço</label>
+              <%= form.text_field :endereco, placeholder:'Insira o seu Endereço'%>
+            </div>
+          </div>
+        </div>
+          <hr class="divisor" />
+          <h1 class="title">Dados de Acesso</h1>
+          <div id="password-wrapper">
+            <div class="field">
+              <label>Escolha uma Senha</label>
+              <%= form.password_field :password, autocomplete: "off", placeholder:'Mínimo de 6 caracteres'%>
+            </div>
+            <div class="field">
+              <label>Repita a Senha</label>
+              <%= form.password_field :password_confirmation, autocomplete: "off", placeholder:'Mínimo de 6 caracteres'%>
+            </div>
+          </div>
+          <%= form.submit 'CADASTRAR', id:'submit-button'  %>
+      </form>
     </div>
-
-    <div class="form-group" style="text-align: left;">
-      <%= form.label :password %>
-      <%= form.password_field :password, autocomplete: "off", class: "form-control" %>
-    </div>
-
-    <div class="form-group" style="text-align: left;">
-      <%= form.label :password_confirmation %><br />
-      <%= form.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-    </div>
-
-
-</div>
-
-
- <div class="submit" style="color: #7A00BA">
-    <%= form.submit 'CADASTRAR', class: 'btn btn-primary' %>
-  </div>
-  </form>
-</div>
-</div>
-</center>
 <% end %>
+<%= render 'layouts/footer' %>
 

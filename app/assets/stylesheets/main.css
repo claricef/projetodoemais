@@ -339,3 +339,20 @@ a:visited {
     flex-basis: 100%;
   }
 }
+.chat-title{
+  color: #7A00BA;
+  font-family: Montserrat, 'sans-serif';
+}
+
+.card-title{
+  font-weight: bold;
+  color: #7A00BA;
+  font-family: Montserrat, 'sans-serif';
+}
+.card{
+  margin-left: 150%;
+  font-family: Montserrat, 'sans-serif';
+  color: #837F7F;
+  width: 200px;
+
+}

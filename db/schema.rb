@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_12_151406) do
+ActiveRecord::Schema.define(version: 2020_05_21_164335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,9 +65,13 @@ ActiveRecord::Schema.define(version: 2020_05_12_151406) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.text "content"
+    t.text "text"
+    t.bigint "ong_id"
+    t.bigint "doador_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["doador_id"], name: "index_messages_on_doador_id"
+    t.index ["ong_id"], name: "index_messages_on_ong_id"
   end
 
   create_table "ongs", force: :cascade do |t|
@@ -89,23 +93,6 @@ ActiveRecord::Schema.define(version: 2020_05_12_151406) do
     t.index ["user_type", "user_id"], name: "index_ongs_on_user_type_and_user_id"
   end
 
-  create_table "room_messages", force: :cascade do |t|
-    t.bigint "room_id"
-    t.bigint "user_id"
-    t.text "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_room_messages_on_room_id"
-    t.index ["user_id"], name: "index_room_messages_on_user_id"
-  end
-
-  create_table "rooms", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_rooms_on_name", unique: true
-  end
-
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -122,6 +109,6 @@ ActiveRecord::Schema.define(version: 2020_05_12_151406) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "doacoes", "ongs"
-  add_foreign_key "room_messages", "rooms"
-  add_foreign_key "room_messages", "users"
+  add_foreign_key "messages", "doadores"
+  add_foreign_key "messages", "ongs"
 end

@@ -3,6 +3,7 @@ class HomeController < ApplicationController
      @doacoes = Doacao.all
      @ongs = Ong.all
      @doadores = Doador.all
+   
   end
 
 

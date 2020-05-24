@@ -1,0 +1,33 @@
+<div class="first-wrapper">
+  <div class="logo-wrapper">
+    <%= image_tag 'LOGO', class: 'logo'  %>
+  </div>
+  <div class="header-wrapper">
+    <%= render 'layouts/nav' %>
+
+<%= form_with(model: message, local: true) do |form| %>
+  <% if message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1 class="chat-title"> Envie uma mensagem para a ONG </h1>
+  <br>
+  <h5><%= current_user.doador.nome %> diz:</h5>
+  <div class="field">
+    <%= form.text_area :text, id:'ong-description', placeholder: 'Digite alguma coisa...' %>
+  </div>
+  <div class="actions">
+    <%= form.submit 'Enviar', id:'submit-button'%>
+  </div>
+<% end %>
+</div>
+</div> 
+<%= render 'layouts/footer' %>

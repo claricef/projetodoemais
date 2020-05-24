@@ -10,32 +10,32 @@
       </ul>
     </div>
   <% end %>
-  <br>
- <center>
-  <div class="card" style="width: 35rem;">
-  <div class="card-header">
-  <h5 class="card-title">Cadastro da Doação!</h5>
-<form>
-  <div class="form-group" style="text-align: left;">
-    <%= form.label :item %>
-    <%= form.text_field :item, class: 'form-control' %>
-  </div>
-
-  <div class="form-group" style="text-align: left;">
-    <%= form.label :status %>
-    <%= form.text_field :status, class: 'form-control'%>
-  </div>
-
-  <div class="form-group" style="text-align: left;">
-    <%= form.label :observação %>
-    <%= form.text_area :obs, class: 'form-control' %>
-  </div>
-  <div class="submit" style="color: #7A00BA">
-    <%= form.submit 'CADASTRAR' %>
-  </div>
-
-</center>
-  <% end %>
-</form>
-</div>
-</div>
+<title>Cadastro de Necessidade</title>
+  </head>
+  <body>
+    <nav class="nav-signup">
+      <%= image_tag 'LOGO', class: 'logo'  %>
+      <h1>CADASTRO DE NECESSIDADE</h1>
+    </nav>
+    <div class="form-wrapper">
+      <form>
+          <div id="data-wrapper">
+            <div class="field need">
+              <label for="donor-name">Item</label>
+              <%= form.text_field :item, id:'donor-name', placeholder: 'Insira o nome do Item' %>
+            </div>
+            <div class="field need">
+              <label>Status</label>
+              <%= form.text_field :status, placeholder: 'Aberta ou Fechada' %>
+            </div>
+            <div class="field need">
+              <label>Observações</label>
+              <%= form.text_area :obs, id:'ong-description', placeholder: 'Descreva alguma observação sobre essa necessidade.'%>
+            </div>
+          </div>
+          <button type="submit" id="submit-button">CADASTRAR</button>
+        </div>
+      </form>
+    </div>
+    <% end %>
+    <%= render 'layouts/footer' %>
