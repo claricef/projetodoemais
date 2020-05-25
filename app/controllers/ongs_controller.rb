@@ -25,18 +25,18 @@ class OngsController < ApplicationController
   # POST /ongs
   # POST /ongs.json
   def create
-    ong = Ong.new(ong_params)
+    @ong = Ong.new(ong_params)
     values = params[:ong]
-    ong.user_type = "User"
+    @ong.user_type = "User"
 
-    user = User.create!(email: values[:email], password: values[:password],
+    @user = User.new(email: values[:email], password: values[:password],
     password_confirmation: values[:passoword_confirmation], tipo: 1)
 
-    ong.user = user;
+    @ong.user = @user
 
-    if ong.valid? and user.valid?
-      ong.save
-
+    if @ong.save! and @user.save!
+      redirect_to root_path
+    else
       render :new
     end
   end

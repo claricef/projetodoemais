@@ -7,6 +7,7 @@
   background-color: #fff;
   border-radius: 15px;
   padding: 30px;
+  animation:  text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 .login-wrapper > h1 {
@@ -69,8 +70,6 @@
   font-weight: bold;
   background-color: var(--purple);
   border-radius: 7px;
-  outline: none;
-  border: none;
 }
 
 .buttons-wrapper > .forgot-password {

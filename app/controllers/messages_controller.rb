@@ -1,75 +1,33 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+	before_action :set_ong, only: [:new, :create]
 
-  # GET /messages
-  # GET /messages.json
-  def index
-    @messages = Message.all
-  end
+	def new
+		@message = Message.new
+	end
 
-  # GET /messages/1
-  # GET /messages/1.json
-  def show
-  end
+	def index
+		@messages = current_user&.ong.messages || current_user&.doador.messages
+	end
 
-  # GET /messages/new
-  def new
-    @message = Message.new
-    @doacao = Doacao.new
-  end
+	def create
+		@message = Message.new(message_params)
+		@message.doador = current_user.doador
+		@message.ong = @ong
 
-  # GET /messages/1/edit
-  def edit
-  end
+		if @message.save!
+			redirect_to root_path
+		else
+			render :new
+		end
+	end
 
-  # POST /messages
-  # POST /messages.json
-  def create
-    @message = Message.new(message_params)
-    @message.doador = current_user.doador
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render :show, status: :created, location: @message }
-      else
-        format.html { render :new }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+	private
 
-  # PATCH/PUT /messages/1
-  # PATCH/PUT /messages/1.json
-  def update
-    respond_to do |format|
-      if @message.update(message_params)
-        format.html { redirect_to @message, notice: 'Message was successfully updated.' }
-        format.json { render :show, status: :ok, location: @message }
-      else
-        format.html { render :edit }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+	def set_ong
+		@ong = Ong.find(params[:ong_id])
+	end
 
-  # DELETE /messages/1
-  # DELETE /messages/1.json
-  def destroy
-    @message.destroy
-    respond_to do |format|
-      format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_message
-      @message = Message.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def message_params
-      params.require(:message).permit(:text, :ong_id, :doador_id)
-    end
+	def message_params
+		params.require(:message).permit(:text)
+	end
 end

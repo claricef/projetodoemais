@@ -37,7 +37,7 @@
      <p class="item"> Precisa de <%= doacao.item %></p>
      <span> <i class="fa fa-map-marker"></i> <%= doacao.ong.cidade %> </span>
      <% if user_signed_in? %>
-     <button> <%= link_to "DOAR", new_message_path %> </button>
+     <button> <%= link_to "DOAR", new_message_path(ong_id: doacao.ong.id) %> </button>
      <% end %>
    </div>
  </article>

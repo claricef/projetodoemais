@@ -4,8 +4,7 @@
   </div>
   <div class="header-wrapper">
     <%= render 'layouts/nav' %>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form"}) do |f| %>
-    <div class="login-wrapper">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "login-wrapper"}) do |f| %>
       <h1>LOGIN NO SISTEMA</h1>
       <div class="field">
         <label>EMAIL DE ACESSO</label>
@@ -19,10 +18,8 @@
         <%= f.submit "ENTRAR", class: "signin-button" %>
         <a class="forgot-password">ESQUECEU A SENHA?</a>
       </div>
-    </div>
   </div>
   <% end %>
-</div>
 </div>
 <%= render 'layouts/footer' %>
 

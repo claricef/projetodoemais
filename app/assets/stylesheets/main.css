@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import './fonts.css';
 @import './animations.css';
 
 :root {
@@ -67,13 +67,14 @@ a:visited {
 .header-wrapper > .image-header {
   position: relative;
   left: -200px;
-  height: 220px;
+  height: 350px;
   width: auto;
   box-shadow: 46px 44px 0px 0px var(--yellow);
   animation:  text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 } 
 
 .header-wrapper > .description-wrapper {
+  display: inline-block;
   flex-basis: 50%;
 }
 
@@ -146,6 +147,7 @@ a:visited {
 }
 
 .third-wrapper > h1 {
+  font-family: Nunito, sans-serif;
   margin-top: 25px;
   flex-basis: 100%;
   font-weight: 700;
@@ -185,17 +187,20 @@ a:visited {
 }
 
 .details > h1 {
+  font-family: Nunito, sans-serif;
   color: var(--purple);
   font-size: 20px;
 }
 
 .details > p {
+  font-family: Nunito, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--gray);
 }
 
 .details > span {
+  font-family: Nunito, sans-serif;
   display: inline-block;
   font-weight: 700;
   color: var(--gray);
@@ -222,7 +227,7 @@ a:visited {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  min-height: 50vh;
+  min-height: 40vh;
   background-image: url('../images/Imagem\ 2.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -238,10 +243,11 @@ a:visited {
 }
 
 .fourth-wrapper > button {
+  font-family: Nunito, sans-serif;
+  font-weight: 700;
   padding: 20px 100px 20px 100px;
   background-color: var(--white);
   color: var(--purple);
-  font-weight: bold;
   font-size: 15px;
   border-radius: 10px;
 }
@@ -318,7 +324,7 @@ a:visited {
 
   .header-wrapper > .description-wrapper {
     flex-basis: 100%;
-    margin-top: 50px;
+    margin-top: 70px;
   }
 
   .second-wrapper > .detail {
@@ -338,21 +344,4 @@ a:visited {
   .links-wrapper > a {
     flex-basis: 100%;
   }
-}
-.chat-title{
-  color: #7A00BA;
-  font-family: Montserrat, 'sans-serif';
-}
-
-.card-title{
-  font-weight: bold;
-  color: #7A00BA;
-  font-family: Montserrat, 'sans-serif';
-}
-.card{
-  margin-left: 150%;
-  font-family: Montserrat, 'sans-serif';
-  color: #837F7F;
-  width: 200px;
-
 }

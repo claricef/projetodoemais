@@ -1,15 +1,5 @@
 <%= form_with(model: doacao, local: true) do |form| %>
-  <% if doacao.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(doacao.errors.count, "error") %> prohibited this doacao from being saved:</h2>
 
-      <ul>
-      <% doacao.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 <title>Cadastro de Necessidade</title>
   </head>
   <body>
@@ -18,7 +8,6 @@
       <h1>CADASTRO DE NECESSIDADE</h1>
     </nav>
     <div class="form-wrapper">
-      <form>
           <div id="data-wrapper">
             <div class="field need">
               <label for="donor-name">Item</label>
@@ -26,7 +15,10 @@
             </div>
             <div class="field need">
               <label>Status</label>
-              <%= form.text_field :status, placeholder: 'Aberta ou Fechada' %>
+                <select name="doacao[status]">
+                  <option value="open">Aberto</option>
+                  <option value="closed">Fechado</option>
+                </select>
             </div>
             <div class="field need">
               <label>Observações</label>
@@ -35,7 +27,6 @@
           </div>
           <button type="submit" id="submit-button">CADASTRAR</button>
         </div>
-      </form>
     </div>
-    <% end %>
-    <%= render 'layouts/footer' %>
+<% end %>
+<%= render 'layouts/footer' %>

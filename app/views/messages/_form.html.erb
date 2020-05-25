@@ -5,7 +5,7 @@
   <div class="header-wrapper">
     <%= render 'layouts/nav' %>
 
-<%= form_with(model: message, local: true) do |form| %>
+<%= form_with(model: message, local: true, url: create_message_path) do |form| %>
   <% if message.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
@@ -18,7 +18,7 @@
     </div>
   <% end %>
 
-  <h1 class="chat-title"> Envie uma mensagem para a ONG </h1>
+  <h1 class="chat-title"> Envie uma mensagem para a ONG <%= @ong.nome_fantasia %> </h1>
   <br>
   <h5><%= current_user.doador.nome %> diz:</h5>
   <div class="field">

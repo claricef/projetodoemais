@@ -16,18 +16,18 @@ class DoadoresController < ApplicationController
   end
 
   def create
-    doador = Doador.new(doador_params)
+    @doador = Doador.new(doador_params)
     values = params[:doador]
-    doador.user_type = "User"
+    @doador.user_type = "User"
 
-    user = User.create!(email: values[:email], password: values[:password],
+    @user = User.new(email: values[:email], password: values[:password],
     password_confirmation: values[:passoword_confirmation], tipo: 0)
 
-    doador.user = user;
+    @doador.user = @user
 
-    if doador.valid? and user.valid?
-      doador.save
-
+    if @doador.save! and @user.save!
+      redirect_to root_path
+    else
       render :new
     end
   end
@@ -60,6 +60,6 @@ class DoadoresController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def doador_params
-      params.require(:doador).permit(:nome, :rg, :cpf, :endereco, :numero, :bairro, :cidade, :uf, :cep, :telefone, :image, :tipo, :user_id)
+      params.require(:doador).permit(:nome, :rg, :cpf, :endereco, :numero, :bairro, :cidade, :uf, :cep, :telefone, :image)
     end
 end
