@@ -29,14 +29,10 @@ class DoacoesController < ApplicationController
   def create
     @doacao = Doacao.new(doacao_params)
     @doacao.ong = current_user.ong
-    respond_to do |format|
-      if @doacao.save
-        format.html { redirect_to @doacao, notice: 'Doacao was successfully created.' }
-        format.json { render :show, status: :created, location: @doacao }
-      else
-        format.html { render :new }
-        format.json { render json: @doacao.errors, status: :unprocessable_entity }
-      end
+   if @doacao.save! 
+      redirect_to root_path, notice: 'Necessidade cadastrada!.'
+    else
+      render :new
     end
   end
 
@@ -52,6 +48,7 @@ class DoacoesController < ApplicationController
         format.json { render json: @doacao.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # DELETE /doacoes/1

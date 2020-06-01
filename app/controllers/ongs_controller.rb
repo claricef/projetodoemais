@@ -35,7 +35,7 @@ class OngsController < ApplicationController
     @ong.user = @user
 
     if @ong.save! and @user.save!
-      redirect_to root_path
+      redirect_to root_path, notice: "Ong cadastrada!"
     else
       render :new
     end

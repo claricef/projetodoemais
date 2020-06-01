@@ -17,8 +17,9 @@
   vertical-align: baseline;
 }
 
-body {
+html, body {
   font-family: Montserrat, 'sans-serif';
+  scroll-behavior: smooth;
 }
 
 button {
@@ -67,7 +68,7 @@ a:visited {
 .header-wrapper > .image-header {
   position: relative;
   left: -200px;
-  height: 350px;
+  height: 280px;
   width: auto;
   box-shadow: 46px 44px 0px 0px var(--yellow);
   animation:  text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
@@ -82,13 +83,14 @@ a:visited {
   color: var(--purple);
   position: relative;
   font-size: 2rem;
+  margin-top: 100px;
   font-weight: 700;
   animation: text-pop-up-top 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .description-wrapper > p {
   font-size: 12px;
-  margin-top: 30px;
+  margin-top: 20px;
   font-weight: 300;
   line-height: 25px;
   animation: text-pop-up-top 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;

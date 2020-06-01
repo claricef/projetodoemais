@@ -26,7 +26,7 @@ class DoadoresController < ApplicationController
     @doador.user = @user
 
     if @doador.save! and @user.save!
-      redirect_to root_path
+      redirect_to root_path, notice: 'Doador cadastrado!.'
     else
       render :new
     end

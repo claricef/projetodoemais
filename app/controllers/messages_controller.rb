@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
 		@message.ong = @ong
 
 		if @message.save!
-			redirect_to root_path
+			redirect_to root_path, notice: 'Mensagem enviada!.'
 		else
 			render :new
 		end

@@ -18,9 +18,11 @@
     </div>
   <% end %>
 
-  <h1 class="chat-title"> Envie uma mensagem para a ONG <%= @ong.nome_fantasia %> </h1>
+  <h1> Envie uma mensagem para a ONG </h1>
+  <h5>Você está ajudando a ONG <%= @ong.nome_fantasia %>, em  <%= @ong.cidade %></h5>
   <br>
-  <h5><%= current_user.doador.nome %> diz:</h5>
+  <%= image_tag current_user.doador.image, style:'width: 100px; height: 100px;'%>
+  <h6 style="margin-left: 2%;"><%= current_user.doador.nome %> diz:</h6>
   <div class="field">
     <%= form.text_area :text, id:'ong-description', placeholder: 'Digite alguma coisa...' %>
   </div>
