@@ -1,12 +1,14 @@
 class MessagesController < ApplicationController
 	before_action :set_ong, only: [:new, :create]
 
-	def new
-		@message = Message.new
+	def index
+		@ongs = current_user&.doador.messages.select(:ong_id).distinct
 	end
 
-	def index
-		@messages = current_user&.ong.messages || current_user&.doador.messages
+	def new
+		doador = current_user&.doador
+		@message = Message.new
+		@messages = Message.where(doador_id: doador.id, ong_id: @ong.id).order 'created_at'
 	end
 
 	def create
@@ -15,16 +17,14 @@ class MessagesController < ApplicationController
 		@message.ong = @ong
 
 		if @message.save!
-			redirect_to root_path, notice: 'Mensagem enviada!.'
-		else
-			render :new
+			redirect_to new_message_path
 		end
 	end
 
 	private
 
 	def set_ong
-		@ong = Ong.find(params[:ong_id])
+		@ong = Ong.find(params[:id])
 	end
 
 	def message_params

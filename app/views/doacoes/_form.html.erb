@@ -1,8 +1,8 @@
 <%= form_with(model: doacao, local: true) do |form| %>
+    <% content_for :head do %>
+      <title>A simple page</title>
+    <% end %>
 
-<title>Cadastro de Necessidade</title>
-  </head>
-  <body>
     <nav class="nav-signup">
       <%= image_tag 'LOGO', class: 'logo'  %>
       <h1>CADASTRO DE NECESSIDADE</h1>
@@ -25,7 +25,7 @@
               <%= form.text_area :obs, id:'ong-description', placeholder: 'Descreva alguma observação sobre essa necessidade.'%>
             </div>
           </div>
-          <button type="submit" id="submit-button">CADASTRAR</button>
+          <button type="submit" id="submit-button"  >CADASTRAR</button>
         </div>
     </div>
 <% end %>

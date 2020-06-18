@@ -28,13 +28,16 @@ button {
   outline: none;
 }
 
+a:hover{
+  text-decoration: none;
+}
 a:link {
-  text-decoration: inherit;
+  text-decoration: none;
   color: inherit;
 }
 
 a:visited {
-  text-decoration: inherit;
+  text-decoration: none;
   color: inherit
 }
 
@@ -302,6 +305,134 @@ a:visited {
   margin-bottom: 15px;
   color: var(--gray);
   font-weight: 700;
+}
+
+.welcome-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+
+  font-family: Nunito, sans-serif;
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.welcome-wrapper > h1 {
+  font-weight: 700;
+}
+
+.welcome-wrapper > p {
+  font-size: 13px;
+}
+
+.welcome-wrapper > .links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 15px;
+  width: 60%;
+}
+
+.links > a {
+  padding: 15px 30px 15px 30px;
+  background-color: var(--white);
+  color: var(--purple);
+  border-radius: 30px;
+}
+
+.links > a:hover {
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+.chat-wrapper {
+  font-family: Nunito, sans-serif;
+  color: var(--purple);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  padding: 15px;
+}
+
+.chat-wrapper > h1 {
+  font-weight: 700;
+}
+
+.chat-wrapper > h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.message-wrapper {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.message-wrapper:nth-of-type(odd) {
+  margin-left: auto;
+  text-align: right;
+}
+
+.message-wrapper:nth-of-type(even) {
+  text-align: left;
+}
+
+.message-wrapper > .name {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.message-wrapper > .description {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.message-wrapper > .date {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--gray);
+}
+
+.donor-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+  max-width: 100%;
+  background-color: var(--purple);
+  color: var(--white);
+  margin-top: 15px;
+}
+
+.donor-message > p {
+  margin: 0;
+}
+
+.donor-message > img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.donor-message > button {
+  padding: 10px 20px 10px 20px;
+  background-color: var(--white);
+  color: var(--purple);
+  border-radius: 30px;
+}
+
+.donor-message > button:hover {
+  text-decoration: none;
+  outline: none;
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {

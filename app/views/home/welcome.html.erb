@@ -1,0 +1,15 @@
+<header class="welcome-wrapper">
+	<% if @user.class.name.eql? "Doador" %>
+		<h1> Seja bem vindo <%= @user.nome %> </h1>
+		<p> Você é um doador, clique para acessar suas opções</p>
+		<div class="links">
+			<%= link_to 'Home', root_path %>
+		</div>
+	<% else %>
+		<h1> Seja bem vindo <%= @user.nome_fantasia %> </h1>
+		<p> Você é uma ong, clique para acessar suas opções</p>
+		<div class="links">
+			<%= link_to 'Home', root_path %>
+		</div>
+	<% end %>
+</header>
