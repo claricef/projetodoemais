@@ -11,19 +11,18 @@
     <a href="#necessidades" >NECESSIDADES</a>
     <% if user_signed_in? %>
     <% if current_user.tipo == 'ong' %>
-    <a><%= link_to "NOVA DOAÇÃO", new_doacao_path %></a>
-    <a><%= link_to "MENSAGENS", messages_path %></a>
-    <a><%= link_to 'MINHA CONTA', edit_user_registration_path  %></a>
-    <a class="user" style="color:#7A00BA; text-transform: uppercase;">Olá, <%= current_user.email %></a>
-    <a><%= link_to 'SAIR', destroy_user_session_path, :method => :delete %></a>
+    <%= link_to "NOVA DOAÇÃO", new_doacao_path %>
+    <%= link_to "MENSAGENS", messages_ong_path %>
+    <%= link_to 'MINHA CONTA', edit_user_registration_path  %>
+    <%= link_to 'SAIR', destroy_user_session_path, :method => :delete %>
     <% else %>
-    <a><%= link_to 'MINHA CONTA', edit_user_registration_path  %></a>
-    <a style="color:#7A00BA;text-transform: uppercase">Olá, <%= current_user.email %></a>
-    <a><%= link_to 'SAIR', destroy_user_session_path, :method => :delete %></a>
+    <%= link_to "MENSAGENS", messages_path %>
+    <%= link_to 'MINHA CONTA', edit_user_registration_path  %>
+    <%= link_to 'SAIR', destroy_user_session_path, :method => :delete %>
     <% end %>
     <% else %>
     <a href="#cadastro" class="signup">CADASTRE-SE</a>
-    <a> <%= link_to 'LOGIN', new_user_session_path %> </a> 
+    <%= link_to 'LOGIN', new_user_session_path %>
     <% end %>  
   </div>
 </div>

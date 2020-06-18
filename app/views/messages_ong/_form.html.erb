@@ -7,16 +7,17 @@
 </nav>
 <div class="chat-wrapper">
   <h1>Chat de Doação</h1>
-  <h5>Você está falando com: ONG <%= @ong.nome_fantasia %>, em  <%= @ong.cidade %></h5>
+  <h5>Você está falando com: Doador <%= @doador.nome %>, em  <%= @doador.cidade %></h5>
+  
   <% @messages&.each do |message| %>
     <div class="message-wrapper">
-      <p class="name"> <%=  message.doador.nome %> diz:</p>
+      <p class="name"> <%= message.ong.nome_fantasia %> diz:</p>
       <p class="description"> <%= message.text %></p>
       <p class="date"> <%= message.created_at.to_formatted_s(:short) %> </p>
     </div>
   <% end %>
   
-  <%= form_with(model: message, local: true, url: create_message_path) do |form| %>
+  <%= form_with(model: message, local: true, url: create_message_ong_path) do |form| %>
     <div id="more-details-wrapper">
       <div class="field">
         <%= form.text_area :text, id:'ong-description', placeholder:'Envie sua Mensagem'%>

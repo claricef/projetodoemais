@@ -1,8 +1,8 @@
 <%= form_with(model: doacao, local: true) do |form| %>
+    <% content_for :head do %>
+      <title>A simple page</title>
+    <% end %>
 
-<title>Cadastro de Necessidade</title>
-  </head>
-  <body>
     <nav class="nav-signup">
       <%= image_tag 'LOGO', class: 'logo'  %>
       <h1>CADASTRO DE NECESSIDADE</h1>

@@ -1,0 +1,19 @@
+<% content_for :head do %>
+  <title>Minhas Mensagem</title>
+<% end %>
+<nav class="nav-signup">
+  <%= image_tag 'LOGO', class: 'logo'  %>
+  <h1>Chat</h1>
+</nav>
+
+<div class="chat-wrapper">
+	<h1> Minhas Mensagens </h1>
+	<h5> Visualize os doadores que lhe enviaram mensagem </h5>
+	<% @doadores.each do |message| %>
+		<div class="donor-message">
+			<%= image_tag get_doador(message.doador_id).image %>
+			<p><%= get_doador(message.doador_id).nome %></p>
+			<button><%= link_to 'Verificar' , new_message_ong_path(id: message.doador_id) %></button>
+		</div>
+	<% end %>
+</div>
