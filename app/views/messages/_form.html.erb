@@ -10,6 +10,9 @@
   <h5>Você está falando com: ONG <%= @ong.nome_fantasia %>, em  <%= @ong.cidade %></h5>
   <% @messages&.each do |message| %>
     <div class="message-wrapper">
+      <% if message.origin.present? %>
+        <p class="name"> <%= message.origin %></p>
+      <% end %>
       <p class="description"> <%= message.text %></p>
       <p class="date"> <%= message.created_at.to_formatted_s(:short) %> </p>
     </div>

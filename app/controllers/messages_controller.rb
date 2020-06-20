@@ -13,6 +13,7 @@ class MessagesController < ApplicationController
 
 	def create
 		@message = Message.new(message_params)
+		@message.origin = current_user.doador&.nome
 		@message.doador = current_user.doador
 		@message.ong = @ong
 

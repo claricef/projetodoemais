@@ -5,33 +5,34 @@
   </div>
   <div class="header-wrapper">
     <%= render 'layouts/nav' %>
-<div class="col-sm-offset-4 col-sm-4 col-xs-12">
-  <h2 class="chat-title text-center">Minha Conta</h2>
+      
+<div class="conta">
+  <h2>Minha Conta</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form" }) do |f| %>
     <%= devise_error_messages! %>
-    <div class="form-group">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, class: "form-control" %>
+    <div>
+      <label> <%= f.label :email %><br /> </label>
+      <%= f.email_field :email, autofocus: true %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
 
-    <div class="form-group">
-      <%= f.label :nova_senha %> 
-      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+    <div>
+      <label> <%= f.label :nova_senha %></label>
+      <%= f.password_field :password, autocomplete: "off" %>
     </div>
 
-    <div class="form-group">
+    <div>
       <%= f.label :repita_senha %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
 
-    <div class="form-group">
-      <%= f.label :senha_atual %>
-      <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+    <div >
+      <label> <%= f.label :senha_atual %> </label>
+      <%= f.password_field :current_password, autocomplete: "off"%>
     </div>
 
     <%= f.submit "Atualizar", id:'submit-button' %>
@@ -39,6 +40,7 @@
 
   <%= button_to "Cancelar Conta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, id:'submit-button' %>
 </div>
+
 </div>
 </div>
 <%= render 'layouts/footer' %>

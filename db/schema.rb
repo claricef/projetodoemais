@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_164335) do
+ActiveRecord::Schema.define(version: 2020_06_18_230713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_164335) do
     t.bigint "doador_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "origin"
     t.index ["doador_id"], name: "index_messages_on_doador_id"
     t.index ["ong_id"], name: "index_messages_on_ong_id"
   end
@@ -98,7 +99,6 @@ ActiveRecord::Schema.define(version: 2020_05_21_164335) do
     t.datetime "updated_at", null: false
     t.integer "tipo"
     t.string "email"
-    t.string "senha"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
