@@ -56,7 +56,7 @@ class DoacoesController < ApplicationController
   def destroy
     @doacao.destroy
     respond_to do |format|
-      format.html { redirect_to doacoes_url, notice: 'Doacao was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Necessidade excluida!.' }
       format.json { head :no_content }
     end
   end

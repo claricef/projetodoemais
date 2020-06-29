@@ -6,7 +6,7 @@ window.onload = function() {
     var reader  = new FileReader();
 
     reader.onloadend = function () {
-      preview.style['background-image'] = `url('${reader.result}')`;
+      preview.style['background-image'] = url('${reader.result}');
       preview.style['background-repeat'] = 'no-repeat';
       preview.style['background-position'] = 'center';
       preview.style['background-size'] = 'cover';

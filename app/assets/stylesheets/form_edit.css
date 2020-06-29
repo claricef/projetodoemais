@@ -12,12 +12,12 @@ label{
    text-align: left;
    margin-bottom: 8px; 
 }
-input[type='email']{
+.email{
 	width: 100%;
 	border: 1px solid purple; 
 	height: 30px;
 }
-input[type='password']{
+.senha{
 	width: 100%;
 	border: 1px solid purple;
 	height: 30px;

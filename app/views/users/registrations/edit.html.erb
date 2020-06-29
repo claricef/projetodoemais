@@ -11,7 +11,7 @@
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form" }) do |f| %>
     <%= devise_error_messages! %>
-    <div>
+    <div class="email">
       <label> <%= f.label :email %><br /> </label>
       <%= f.email_field :email, autofocus: true %>
     </div>
@@ -20,17 +20,17 @@
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
 
-    <div>
-      <label> <%= f.label :nova_senha %></label>
+    <div class="senha">
+      <label > <%= f.label :nova_senha %></label>
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
 
-    <div>
+    <div class="senha">
       <%= f.label :repita_senha %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
 
-    <div >
+    <div class="senha">
       <label> <%= f.label :senha_atual %> </label>
       <%= f.password_field :current_password, autocomplete: "off"%>
     </div>
